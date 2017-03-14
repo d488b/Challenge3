@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="This is a simple CSS, HTML, and JS Test">
+    <title>WebToMed Website Developer Test</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <style>
+        /* Add all CSS enteries here */
+        #div_1{
+            background-color:red;
+            width:300px;
+            text-align: left;
+        }
+        #div_2{
+            background-color:green;
+            text-align: center;
+        }
+        #div_3{
+            background-color:blue;
+            width:350px;
+            color:#ffffff;
+            font-weight: bold;
+            text-decoration: underline;
+            text-align: right;
+        }
+        #div_4 {
+            background-color: yellow;
+            height: 400px;
+            text-align: center;
+            line-height: 300px;
+        }
+        #div_1, #div_2, #div_3{
+            height: 50px;
+            display: inline-block;
+        }
+        #div_6{
+            border: 3px solid #000000;
+            margin-top: 10px;
+            padding: 20px;
+        }
+        #divContainer{
+            display: flex;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function(){
+            $('button').on('click', function() {
+                var getDiv = $("#divDrop option:selected").val();
+                var getColor = $("#colorDrop option:selected").val();
+                $('#' + getDiv).css('border', "10px solid " + getColor);
+            });
+        });
+
+    </script>
+</head>
+<body>
+
+
+<!-- Modify this block of divs - START -->
+<div id="divContainer">
+    <div id="div_1">LEFT COL STATIC WIDTH 300px</div>
+
+    <div id="div_2">CENTER COL DYNAMIC WIDTH</div>
+    <div id="div_3">RIGHT COL STATIC WIDTH 350px</div>
+</div>
+<div id="div_4">
+    <div id="div_5">
+        This text should be centered horizontally and vertically.
+    </div>
+</div>
+<div id="div_6">
+    Div Selector:
+    <!-- Place Div Select Here -->
+    <select id="divDrop">
+        <option value="div_1" selected="selected">Div 1</option>
+        <option value="div_2">Div 2</option>
+        <option value="div_3">Div 3</option>
+    </select>
+    <br /><br />
+    Color Selector:
+    <!-- Place Color Select Here -->
+    <!-- Place "Change Color" Button Here -->
+    <select id="colorDrop">
+        <option value="#333333" selected="selected">Gray 1</option>
+        <option value="#777777">Gray 2</option>
+        <option value="#CCCCCC">Gray 3</option>
+    </select>
+    <button type="button">Change Color</button>
+</div>
+<!-- Modify this block of divs - END -->
+
+
+<br />
+<hr />
+<div><strong>Your end result should look like this (do not modify anything below this line):</strong></div>
+<br />
+<img src="http://careers-test.webtomed.com/assets/images/test.gif" width="1024" height="484" />
+
+</body>
+</html>
